@@ -1,7 +1,8 @@
 {
   "packages": {
     "iron-router": {},
+    "GAnalytics": {},
     "bootstrap-3": {},
-    "GAnalytics": {}
+    "accounts-ui-bootstrap-3": {}
   }
 }
