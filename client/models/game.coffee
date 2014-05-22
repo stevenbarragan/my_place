@@ -20,20 +20,20 @@ class @Game
       @ball.move()
       @check_player_2()
     else
-      @check()
+      @check_ball()
       @check_player_1()
 
-  check: ->
+  check_ball: ->
     Deps.autorun ->
-      model = Matches.findOne(match._id)
+      model = Matches.findOne(Session.get('match')._id)
       window.ball.update(model.ball.x, model.ball.y)
 
   check_player_1: ->
     Deps.autorun ->
-      model = Matches.findOne(match._id)
-      window.game.player1.move( model.player_1.y )
+      model = Matches.findOne(Session.get('match')._id)
+      window.game.player1.move(model.player_1.y)
 
   check_player_2: ->
     Deps.autorun ->
-      model = Matches.findOne(match._id)
+      model = Matches.findOne(Session.get('match')._id)
       window.game.player2.move( model.player_2.y )
