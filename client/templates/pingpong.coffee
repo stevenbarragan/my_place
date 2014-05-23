@@ -24,18 +24,13 @@ Template.pingpong_start.rendered = ->
           ball:
             x: 450
             y: 200
+          counter:
+            started: false
+            finished: false
+            time: 3
           started: false
           direcction: 1
 
       console.log 'Im ' + window.player
 
       Session.set 'match', Matches.findOne({_id: match_id })
-
-Template.pingpong_start.match = ->
-   match = Session.get('match')
-   if match
-     Matches.findOne({_id: match._id}).player_2._id && true
-   else
-     false
-
-
