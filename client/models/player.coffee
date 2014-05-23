@@ -14,7 +14,7 @@ class @Player
 
   update: ->
     @rect.transition().
-      duration(50).
+      duration(10).
       attr('y', @y)
 
   move: (y)->
