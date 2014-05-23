@@ -46,7 +46,7 @@ class @Ball
           @move()
         else
           if @crash_right(new_x)
-            console.log 'player 2 lost'
+            # console.log 'player 2 lost'
             @direction_x = -1
             @move()
           else
@@ -58,7 +58,7 @@ class @Ball
           @move()
         else
           if @crash_left(new_x)
-            console.log 'player 1 lost'
+            # console.log 'player 1 lost'
             @direction_x = 1
             @move()
           else

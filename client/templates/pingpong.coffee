@@ -31,6 +31,4 @@ Template.pingpong_start.rendered = ->
           started: false
           direcction: 1
 
-      console.log 'Im ' + window.player
-
       Session.set 'match', Matches.findOne({_id: match_id })

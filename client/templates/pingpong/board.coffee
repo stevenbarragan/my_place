@@ -15,3 +15,7 @@ Template.pingpong_board.rendered = ->
           switch d3.event.keyCode
             when 38 then game.player2.up()
             when 40 then game.player2.down()
+
+    Meteor.setTimeout (->
+      game.start()
+    ), 1000

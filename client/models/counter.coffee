@@ -14,14 +14,8 @@ class @Counter
     Matches.update {_id: @match._id}, {$inc: {'counter.time': -1}}
     @update_match()
     if @match.counter.time == 0
-      console.log 'finished'
       Meteor.clearInterval @interval
       Matches.update {_id: @match._id}, {$set: {'counter.finished': true}}
 
   update_match: ->
     @match = Matches.findOne({_id: @match._id})
-
-  start_game: ->
-    console.log 'Start game'
-
-
