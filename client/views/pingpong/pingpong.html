@@ -1,0 +1,9 @@
+<template name="pingpong">
+  <div class="container-fluid">
+    {{#if currentUser }}
+      {{> pingpong_start }}
+    {{else}}
+      You need to log in in order to be able to play
+    {{/if}}
+  </div>
+</template>

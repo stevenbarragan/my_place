@@ -1,0 +1,15 @@
+<template name="pingpong_start">
+  {{#if match }}
+    {{> pingpong_start_button }}
+  {{else}}
+    <h1>Waiting for someone to play with</h1>
+  {{/if}}
+</template>
+
+<template name="pingpong_start_button">
+  {{#if counter.finished }}
+    {{> pingpong_board }}
+  {{else}}
+    {{> pingpong_counter }}
+  {{/if}}
+</template>
