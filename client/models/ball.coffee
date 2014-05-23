@@ -30,8 +30,8 @@ class @Ball
       attr('cy', @y)
 
   move: ->
-    x = Math.cos(@angle) * 10 * @direction_x
-    y = Math.sin(@angle) * 10 * @direction_y
+    x = Math.round Math.cos(@angle) * 10 * @direction_x
+    y = Math.round Math.sin(@angle) * 10 * @direction_y
 
     new_x = @x + x
     new_y = @y + y
