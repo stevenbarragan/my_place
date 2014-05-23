@@ -17,3 +17,6 @@ Template.pingpong_board.rendered = ->
   Meteor.setTimeout (->
     game.start()
   ), 1000
+
+Template.pingpong_board.ball = ->
+  Matches.findOne(_id: Session.get('match')._id).ball

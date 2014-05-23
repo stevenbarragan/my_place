@@ -3,15 +3,10 @@ class @Ball
     @angle = Math.PI / 4
     @direction_x = 1
     @direction_y = 1
+
     @x = 450
     @y = 200
     @r = 10
-
-    @circle = @game.board.append("circle").
-      style('fill', 'black').
-      attr('cx', @match.ball.x).
-      attr('cy', @match.ball.y).
-      attr('r', @r)
 
   set: (x,y)->
     Matches.update(_id: @match._id, {$set: {ball: {x: x, y: y}}})
@@ -24,10 +19,6 @@ class @Ball
   update: (x, y) ->
     @x = x
     @y = y
-    @circle.transition().
-      duration(5).
-      attr('cx', @x).
-      attr('cy', @y)
 
   move: ->
     x = Math.round Math.cos(@angle) * 10 * @direction_x
@@ -84,10 +75,6 @@ class @Ball
     x > @game.width
 
   animate: =>
-    @circle.transition().
-      duration(5).
-      attr('cx', @x).
-      attr('cy', @y).
-      each('end', ->
-        ball.move()
-      )
+    Meteor.setTimeout (->
+      ball.move()
+    ), 10
