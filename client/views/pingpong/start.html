@@ -2,7 +2,7 @@
   {{#if match }}
     {{> pingpong_start_button }}
   {{else}}
-    Waiting for someone to play with
+    <h1>Waiting for someone to play with</h1>
   {{/if}}
 </template>
 
@@ -10,17 +10,6 @@
   {{#if counter.finished }}
     {{> pingpong_board }}
   {{else}}
-    <div id="counter_board">
-      <div class='start_game'>
-        Start Game
-      </div>
-      {{#if counter.started }}
-        <div class='time'>
-         {{ counter.time }}
-        </div>
-      {{else}}
-        <button class="btn">Play</button>
-      {{/if}}
-    </div>
+    {{> pingpong_counter }}
   {{/if}}
 </template>

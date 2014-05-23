@@ -1,0 +1,14 @@
+<template name="pingpong_counter">
+  <div id="counter_board">
+    <div class='start_game'>
+      Start Game
+    </div>
+    {{#if counter.started }}
+      <div class='time'>
+       {{ counter.time }}
+      </div>
+    {{else}}
+      <button class="btn">Play</button>
+    {{/if}}
+  </div>
+</template>
