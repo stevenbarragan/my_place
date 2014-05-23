@@ -5,4 +5,4 @@ Template.pingpong_start_button.events(
 )
 
 Template.pingpong_start_button.counter = ->
-  Matches.findOne(_id: Session.get('match')._id).counter
+  Counters.findOne(match_id: Session.get('match')._id)

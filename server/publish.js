@@ -1,4 +1,5 @@
 var Matches = new Meteor.Collection('matches');
+var Counters = new Meteor.Collection('counter');
 
 Matches.allow({
   insert: function() {

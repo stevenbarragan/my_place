@@ -24,11 +24,12 @@ Template.pingpong_start.rendered = ->
           ball:
             x: 450
             y: 200
-          counter:
-            started: false
-            finished: false
-            time: 3
-          started: false
           direcction: 1
+
+        Counters.insert
+          started:  false
+          finished: false
+          time:     3
+          match_id: match_id
 
       Session.set 'match', Matches.findOne({_id: match_id })

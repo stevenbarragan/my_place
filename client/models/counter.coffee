@@ -1,21 +1,18 @@
 class @Counter
   constructor: ->
-    @match = Session.get('match')
+    @data = Counters.findOne(match_id: Session.get('match')._id)
 
   start: ->
-    if @match.counter.started == false
-      Matches.update({_id: @match._id}, {$set: {'counter.started': true}})
+    if @data.started == false
+      Counters.update {_id: @data._id}, {$set: {started: true}}
 
       @interval = Meteor.setInterval (->
         counter.count_down()
       ), 1000
 
   count_down: ->
-    Matches.update {_id: @match._id}, {$inc: {'counter.time': -1}}
-    @update_match()
-    if @match.counter.time == 0
+    Counters.update {_id: @data._id}, {$inc: {time: -1}}
+    @data = Counters.findOne {_id: @data._id}
+    if @data.time == 0
       Meteor.clearInterval @interval
-      Matches.update {_id: @match._id}, {$set: {'counter.finished': true}}
-
-  update_match: ->
-    @match = Matches.findOne({_id: @match._id})
+      Counters.update {_id: @data._id}, {$set: {finished: true}}
