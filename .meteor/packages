@@ -10,8 +10,6 @@ iron-router
 showdown
 bootstrap-3
 GAnalytics
-accounts-github
-accounts-facebook
 accounts-ui-bootstrap-3
 accounts-password
 coffeescript
