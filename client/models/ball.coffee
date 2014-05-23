@@ -91,4 +91,3 @@ class @Ball
       each('end', ->
         ball.move()
       )
-
