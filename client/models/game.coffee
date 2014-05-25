@@ -16,11 +16,10 @@ class @Game
     @player2 = new Player_two(@, 'player_2')
 
   start: ->
+    @ball.move()
     if window.player == 'player_1'
-      @ball.move()
       @check_player_2()
     else
-      @check_ball()
       @check_player_1()
 
   check_ball: ->
