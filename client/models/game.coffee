@@ -3,11 +3,7 @@ class @Game
     @width = 950
     @heigt = 450
 
-    @board = d3.select('#board').
-      append("svg").
-      attr("width", @with).
-      attr("height", @heigt)
-
+    @board = d3.select('#board svg')
     @ball = new Ball(@, @match)
 
     window.ball = @ball
@@ -21,11 +17,6 @@ class @Game
       @check_player_2()
     else
       @check_player_1()
-
-  check_ball: ->
-    Deps.autorun ->
-      model = Matches.findOne(Session.get('match')._id)
-      window.ball.update(model.ball.x, model.ball.y)
 
   check_player_1: ->
     Deps.autorun ->

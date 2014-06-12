@@ -1,4 +1,9 @@
 <template name="pingpong_board">
   <div id="board">
+    <svg height="450">
+      <circle cx="{{ ball.x }}" cy="{{ ball.y }}" r="10" style="fill: rgb(0, 0, 0);"></circle>
+      <rect width="30" height="150" x="0" y="0" style="fill: rgb(0, 0, 0);"></rect>
+      <rect width="30" height="150" x="930" y="0" style="fill: rgb(0, 0, 0);"></rect>
+    </svg>
   </div>
 </template>
