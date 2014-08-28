@@ -6,12 +6,12 @@
 standard-app-packages
 autopublish
 insecure
-iron-router
+cmather:iron-router@0.7.1
 showdown
-bootstrap-3
-GAnalytics
-accounts-ui-bootstrap-3
+mrt:bootstrap-3@3.1.1-1
+datariot:ganalytics@0.2.0
+mrt:accounts-ui-bootstrap-3@0.3.0-1
 accounts-password
 coffeescript
 d3
-kadira
+arunoda:kadira@2.2.0
